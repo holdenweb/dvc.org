@@ -7,7 +7,7 @@ interface ISiteMeta {
   siteUrl: string
 }
 
-export default function siteMeta(): ISiteMeta {
+export function useSiteMeta(): ISiteMeta {
   const {
     site: { siteMetadata }
   } = useStaticQuery(

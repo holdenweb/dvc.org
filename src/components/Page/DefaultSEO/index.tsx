@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import { MetaProps } from '../../SEO'
-import getSiteMeta from '../../../queries/siteMeta'
+import { useSiteMeta } from '../../../queries/siteMeta'
 
 interface IDefaultSEOProps {
   pathname: string
@@ -15,8 +15,7 @@ const metaImage = {
 }
 
 const DefaultSEO: React.FC<IDefaultSEOProps> = ({ pathname }) => {
-  console.log('DefaultSEO', pathname)
-  const siteMeta = getSiteMeta()
+  const siteMeta = useSiteMeta()
   const siteUrl = siteMeta.siteUrl
   const metaTitle = siteMeta.title
   const metaDescription = siteMeta.description

@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import { IPaginatorPageInfo } from '../Paginator'
-import getSiteMeta from '../../queries/siteMeta'
+import { useSiteMeta } from '../../queries/siteMeta'
 
 export type MetaProps = JSX.IntrinsicElements['meta']
 
@@ -31,7 +31,7 @@ const SEO: React.FC<ISEOProps> = ({
   pageInfo,
   children
 }) => {
-  const siteMeta = getSiteMeta()
+  const siteMeta = useSiteMeta()
   const prebuildMeta: MetaProps[] = []
 
   if (pageInfo && pageInfo.currentPage > 1) {
